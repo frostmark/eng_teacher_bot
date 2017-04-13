@@ -1,5 +1,8 @@
 module Application
   module Config
-    BOT_TOKEN = 'token'
+    CONFIG_FILE = YAML.load_file('config/config.yml')
+
+    BOT_TOKEN = CONFIG_FILE['bot_token']
+    DB_NAME = CONFIG_FILE['database']['name']
   end
 end

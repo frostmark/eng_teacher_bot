@@ -1,3 +1,3 @@
 require_relative 'application/application'
 
-Application.execute
+Application.run
