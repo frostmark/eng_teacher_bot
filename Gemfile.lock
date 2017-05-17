@@ -5,6 +5,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    byebug (9.0.6)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     couchrest (2.0.1)
@@ -13,6 +14,7 @@ GEM
       multi_json (~> 1.7)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    dotenv (2.2.1)
     equalizer (0.0.11)
     faraday (0.12.0.1)
       multipart-post (>= 1.2, < 3)
@@ -37,7 +39,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   couchrest
+  dotenv
   telegram-bot-ruby
 
 BUNDLED WITH
