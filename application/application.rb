@@ -3,6 +3,7 @@ require 'byebug'
 require 'couchrest'
 require 'date'
 require 'yaml'
+require 'erb'
 
 require_relative 'config/config'
 require_relative 'base'
