@@ -5,8 +5,9 @@ require 'date'
 require 'yaml'
 require 'erb'
 
+Dir['application/answer/*.rb'].each {|file| require file }
+
 require_relative 'config/config'
-require_relative 'base'
 require_relative 'bot'
 
 module Application

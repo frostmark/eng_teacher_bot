@@ -1,26 +1,29 @@
 module Application
   class Bot
-    include Base
+    attr_reader :message, :bot
 
     def initialize
+      @message = nil
+      @db = db
+      @bot = nil
+    end
 
+    def server
+      @server ||= CouchRest.new
+    end
+
+    def db
+      @db ||= server.database!(Config::DB_NAME)
     end
 
     def run
       Telegram::Bot::Client.run(Config::BOT_TOKEN) do |bot|
+        @bot = bot
         bot.listen do |message|
+          @message = message
           case message.text
           when 'зарегестрируй меня'
-            unless db.get(message.from.id.to_s)
-              db.save_doc(
-                          '_id' => message.from.id.to_s,
-                          'name' => "#{message.from.first_name} #{message.from.last_name}",
-                          'username' => message.from.username.to_s,
-                          'words' => {}
-                        )
-            else
-              bot.api.send_message(chat_id: message.chat.id, text: "Сорян, ты зарегестрирован уже!")
-            end
+            Application::Answer::Register.new(self).call
           when /^Добавь:\s(.*\ -\ .*)/
             words = message.text.match(/\s(.*\ -\ .*)/)[1].split(' - ')
 
