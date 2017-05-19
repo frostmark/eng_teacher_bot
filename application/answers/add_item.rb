@@ -1,14 +1,6 @@
 module Application
-  module Answer
-    class AddItem
-      attr_reader :db, :message, :bot
-
-      def initialize(app)
-        @db = app.db
-        @message = app.message
-        @bot = app.bot
-      end
-
+  module Answers
+    class AddItem < AnswerBase
       def call
         words = message.text.match(/\s(.*\ -\ .*)/)[1].split(' - ')
 

@@ -1,14 +1,6 @@
 module Application
-  module Answer
-    class Register
-      attr_reader :db, :message, :bot
-
-      def initialize(app)
-        @db = app.db
-        @message = app.message
-        @bot = app.bot
-      end
-
+  module Answers
+    class Register < AnswerBase
       def call
         unless db.get(message.from.id.to_s)
           db.save_doc(
