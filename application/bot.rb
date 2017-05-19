@@ -23,28 +23,9 @@ module Application
           @message = message
           case message.text
           when 'зарегестрируй меня'
-            Application::Answer::Register.new(self).call
+            Answer::Register.new(self).call
           when /^Добавь:\s(.*\ -\ .*)/
-            words = message.text.match(/\s(.*\ -\ .*)/)[1].split(' - ')
-
-            doc = db.get(message.from.id.to_s)
-            unless doc['words'][words[0]]
-              doc['words'][words[0]] = {
-                'translate' => words[1],
-                'counter_repeat' => 0,
-                'date_at' => DateTime.now.to_s
-              }
-
-              if doc.save
-                bot.api.send_message(chat_id: message.chat.id, text: "#{words[0]} - #{words[1]} добавлено!")
-              else
-                bot.api.send_message(chat_id: message.chat.id, text: "Что-то пошло не так!")
-              end
-            else
-              bot.api.send_message(chat_id: message.chat.id, text: "Такое слово уже есть!")
-            end
-
-            # bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message.from.first_name}")
+            Answer::AddItem.new(self).call
           when 'хэлп'
             help = <<~HELP
               hi
