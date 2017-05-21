@@ -1,4 +1,4 @@
 bot_token: <%= ENV['BOT_TOKEN'] %>
 
 database:
-  name: eng_teacher_bot
+  uri: https://spaced-repetition-tg-71692.firebaseio.com/

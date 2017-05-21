@@ -1,12 +1,12 @@
 require 'telegram/bot'
 require 'byebug'
-require 'couchrest'
+require 'firebase'
 require 'date'
 require 'yaml'
 require 'erb'
 
-require_relative 'answers'
-Dir['application/answers/*.rb'].each { |file| require file }
+require_relative 'actions'
+Dir['application/actions/*.rb'].each { |file| require file }
 
 require_relative 'config/config'
 require_relative 'bot'

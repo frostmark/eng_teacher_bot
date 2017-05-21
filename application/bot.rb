@@ -4,16 +4,7 @@ module Application
 
     def initialize
       @message = nil
-      @db = db
       @bot = nil
-    end
-
-    def server
-      @server ||= CouchRest.new
-    end
-
-    def db
-      @db ||= server.database!(Config::DB_NAME)
     end
 
     def run
@@ -23,9 +14,9 @@ module Application
           @message = message
           case message.text
           when 'зарегестрируй меня'
-            Answers::Register.new(self).call
+            Actions::Register.new(self).call
           when /^Добавь:\s(.*\ -\ .*)/
-            Answers::AddItem.new(self).call
+            Actions::AddItem.new(self).call
           when 'хэлп'
             help = <<~HELP
               hi
