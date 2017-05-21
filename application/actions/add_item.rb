@@ -1,6 +1,6 @@
 module Application
-  module Answers
-    class AddItem < AnswerBase
+  module Actions
+    class AddItem < Base
       def call
         words = message.text.match(/\s(.*\ -\ .*)/)[1].split(' - ')
 
