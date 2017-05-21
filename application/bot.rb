@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Application
   class Bot
     attr_reader :message, :bot

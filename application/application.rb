@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'telegram/bot'
 require 'byebug'
 require 'firebase'
