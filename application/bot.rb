@@ -4,16 +4,7 @@ module Application
 
     def initialize
       @message = nil
-      @db = db
       @bot = nil
-    end
-
-    def server
-      @server ||= CouchRest.new
-    end
-
-    def db
-      @db ||= server.database!(Config::DB_NAME)
     end
 
     def run

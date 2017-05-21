@@ -1,6 +1,6 @@
 require 'telegram/bot'
 require 'byebug'
-require 'couchrest'
+require 'firebase'
 require 'date'
 require 'yaml'
 require 'erb'
