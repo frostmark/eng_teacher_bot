@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Application
-  module Actions
-    class AddItem < Base
-      def call; end
-    end
+  class Actions::AddItem < Actions::Base
+    def call; end
   end
 end
