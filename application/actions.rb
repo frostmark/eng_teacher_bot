@@ -1,6 +1,6 @@
 module Application
-  module Answers
-    class AnswerBase
+  module Actions
+    class Base
       attr_reader :db, :message, :bot
 
       def initialize(app)

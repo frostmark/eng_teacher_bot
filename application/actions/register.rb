@@ -1,6 +1,6 @@
 module Application
-  module Answers
-    class Register < AnswerBase
+  module Actions
+    class Register < Base
       def call
         unless db.get(message.from.id.to_s)
           db.save_doc(
