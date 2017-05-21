@@ -3,6 +3,7 @@ module Application
     CONFIG_FILE = YAML.load(ERB.new(File.read('config/config.yml')).result)
 
     BOT_TOKEN = CONFIG_FILE['bot_token']
-    DB_NAME = CONFIG_FILE['database']['name']
+    DB_URI = CONFIG_FILE['database']['uri']
+    DB_SECRET_KEY = CONFIG_FILE['database']['secret_key']
   end
 end

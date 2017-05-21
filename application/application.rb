@@ -8,6 +8,9 @@ require 'erb'
 require_relative 'actions'
 Dir['application/actions/*.rb'].each { |file| require file }
 
+require_relative 'models'
+Dir['application/models/*.rb'].each { |file| require file }
+
 require_relative 'config/config'
 require_relative 'bot'
 
