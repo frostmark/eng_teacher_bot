@@ -14,9 +14,9 @@ module Application
           @message = message
           case message.text
           when 'зарегестрируй меня'
-            Answers::Register.new(self).call
+            Actions::Register.new(self).call
           when /^Добавь:\s(.*\ -\ .*)/
-            Answers::AddItem.new(self).call
+            Actions::AddItem.new(self).call
           when 'хэлп'
             help = <<~HELP
               hi
