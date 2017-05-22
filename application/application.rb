@@ -14,12 +14,13 @@ Dir['application/actions/*.rb'].each { |file| require file }
 require_relative 'models'
 Dir['application/models/*.rb'].each { |file| require file }
 
+require_relative 'jobs'
+Dir['application/jobs/*.rb'].each { |file| require file }
+
 require_relative 'config/config'
 require_relative 'bot'
 
-Sidekiq.configure_server do |config|
-  config.redis = { namespace: 'spaced_repetition_tb' }
-end
+$stdout.sync = true if ENV['ENV'] == 'development'
 
 module Application
   def self.run
