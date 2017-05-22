@@ -43,8 +43,6 @@ GEM
       rake
     rake (12.0.0)
     redis (3.3.3)
-    redis-namespace (1.5.3)
-      redis (~> 3.0, >= 3.0.4)
     rspec (3.6.0)
       rspec-core (~> 3.6.0)
       rspec-expectations (~> 3.6.0)
@@ -95,7 +93,6 @@ DEPENDENCIES
   dotenv (~> 2.2.1)
   firebase (~> 0.2.6)
   foreman (~> 0.84.0)
-  redis-namespace (~> 1.5.3)
   rspec (~> 3.6.0)
   rubocop (~> 0.48.1)
   sidekiq (~> 5.0.0)
