@@ -2,8 +2,8 @@
 
 module Application
   class Models::User < Models::Base
-    def create(data)
-      db.set('/users', data)
+    def create(id, data)
+      db.set("/users/#{id}", data)
     end
 
     def find(id)
