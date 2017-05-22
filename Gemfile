@@ -7,7 +7,6 @@ gem 'firebase', '~> 0.2.6'
 gem 'telegram-bot-ruby', '~> 0.7.2'
 gem 'sidekiq', '~> 5.0.0'
 gem 'foreman', '~> 0.84.0'
-gem 'redis-namespace', '~> 1.5.3'
 
 group :test do
   gem 'rspec', '~> 3.6.0'
