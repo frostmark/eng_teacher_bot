@@ -3,6 +3,5 @@
 module Application
   class Models::Item < Models::Base
     node :items
-
   end
 end
