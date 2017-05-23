@@ -1,1 +1,2 @@
 # Spaced Repetition telegram bot
+<a href="https://codeclimate.com/github/frostmark/spaced_repetition_telegram_bot"><img src="https://codeclimate.com/github/frostmark/spaced_repetition_telegram_bot/badges/gpa.svg" /></a> <a href="https://codeclimate.com/github/frostmark/spaced_repetition_telegram_bot"><img src="https://codeclimate.com/github/frostmark/spaced_repetition_telegram_bot/badges/issue_count.svg" /></a>
