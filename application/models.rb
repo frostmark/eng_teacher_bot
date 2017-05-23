@@ -19,10 +19,12 @@ module Application
         db.update("/#{@@node_name}/#{id}", data)
       end
 
-      protected
+      class << self
+        protected
 
-      def self.node(node_name)
-        @@node_name = node_name
+        def node(node_name)
+          @@node_name = node_name
+        end
       end
     end
   end
