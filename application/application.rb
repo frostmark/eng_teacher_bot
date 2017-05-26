@@ -7,6 +7,7 @@ require 'sidekiq'
 require 'date'
 require 'yaml'
 require 'erb'
+require 'i18n'
 
 require_relative 'actions'
 Dir['application/actions/*.rb'].each { |file| require file }
@@ -21,6 +22,8 @@ require_relative 'config/config'
 require_relative 'bot'
 
 $stdout.sync = true if ENV['ENV'] == 'development'
+I18n.load_path = Dir['config/locales/*.yml']
+I18n.backend.load_translations
 
 module Application
   def self.run
