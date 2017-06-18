@@ -19,7 +19,7 @@ module Application
             Actions::Register.new(self).call
           when 'тэст'
             puts 'added'
-            Jobs::Reminder.perform_async('test', 3, bot)
+            Jobs::Reminder.perform_async('test', 3)
             bot.api.send_message(chat_id: message.chat.id, text: 'Добавил задачу')
           when /^Добавь:\s(.*\ -\ .*)/
             Actions::AddItem.new(self).call
